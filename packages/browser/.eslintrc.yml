@@ -1,0 +1,7 @@
+extends:
+  - ../../.eslintrc.yml
+  - plugin:vue/essential
+  - '@vue/prettier'
+  - '@vue/typescript'
+parserOptions:
+  parser: '@typescript-eslint/parser'
