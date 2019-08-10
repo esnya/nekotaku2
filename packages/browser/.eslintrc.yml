@@ -1,5 +1,4 @@
 extends:
-  - ../../.eslintrc.yml
   - plugin:vue/essential
   - '@vue/prettier'
   - '@vue/typescript'

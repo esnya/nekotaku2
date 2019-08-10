@@ -7,6 +7,7 @@ rules:
   '@typescript-eslint/explicit-function-return-type':
     - error
     - allowExpressions: true
+  '@typescript-eslint/no-object-literal-type-assertion': off
   '@typescript-eslint/indent':
     - error
     - 2
@@ -15,7 +16,7 @@ rules:
     - endOfLine: lf
       singleQuote: true
       trailingComma: all
-  require-jsdoc: 0
+  require-jsdoc: off
 
   # ToDo
   new-cap: 0

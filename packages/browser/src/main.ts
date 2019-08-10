@@ -1,9 +1,11 @@
-import Vue from 'vue';
+import Vue, { ComponentOptions } from 'vue';
 import App from './App.vue';
 import router from './router';
 import './registerServiceWorker';
+import vuetify from './plugins/vuetify';
 
 new Vue({
   router,
+  vuetify,
   render: h => h(App),
-}).$mount('#app');
+} as ComponentOptions<Vue>).$mount('#app');
