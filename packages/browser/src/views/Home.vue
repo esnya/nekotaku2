@@ -14,8 +14,6 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import Document from 'nekotaku-core/types/Document';
-import Room from 'nekotaku-core/types/Room';
 import Logo from '../assets/logo.svg';
 import RoomCreationCard from '../components/RoomCreationCard.vue';
 import RoomListCard from '../components/RoomListCard.vue';

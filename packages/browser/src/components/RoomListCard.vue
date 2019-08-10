@@ -24,7 +24,7 @@
 
 <script lang="ts">
 import moment from 'moment';
-import { Component, Vue, Prop } from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator';
 import Document from 'nekotaku-core/types/Document';
 import Room from 'nekotaku-core/types/Room';
 import BCDice from 'bcdice';
@@ -34,12 +34,12 @@ interface TableItem extends Room {
   title: string;
   gameType: string;
   gameName: string;
-  createdAt: string;
+  createdAt: number;
+  createdAtText: string;
 }
 
 @Component({
-  components: {
-  },
+  components: {},
 })
 export default class RoomListCard extends Vue {
   private readonly rooms: Document<Room>[] = [
@@ -73,7 +73,7 @@ export default class RoomListCard extends Vue {
         characterParameterDefinitions: [],
       },
     },
-  ]
+  ];
 
   private search: string | null = null;
 
@@ -85,16 +85,10 @@ export default class RoomListCard extends Vue {
   ];
 
   private get items(): TableItem[] {
-    return this.rooms.map((room) => {
-      const {
-        id,
-        createdAt,
-        data,
-      } = room;
+    return this.rooms.map(room => {
+      const { id, createdAt, data } = room;
 
-      const {
-        gameType,
-      } = data;
+      const { gameType } = data;
 
       const gameInfo = BCDice.infoList.find(game => game.gameType === gameType);
       const gameName = gameInfo ? gameInfo.gameName : gameType;

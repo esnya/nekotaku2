@@ -33,8 +33,7 @@ import sortBy from 'lodash-es/sortBy';
 import { required, maxLength } from '../validators';
 
 @Component({
-  components: {
-  },
+  components: {},
 })
 export default class RoomCreationCard extends Vue {
   private valid: boolean = false;
@@ -43,10 +42,13 @@ export default class RoomCreationCard extends Vue {
   private readonly titleRules = [required, maxLength(20)];
 
   private gameType: string | null = null;
-  private readonly gameTypeItems = sortBy(BCDice.infoList.map(info => ({
-    text: info.gameName,
-    value: info.gameType,
-  })), a => a.text);
+  private readonly gameTypeItems = sortBy(
+    BCDice.infoList.map(info => ({
+      text: info.gameName,
+      value: info.gameType,
+    })),
+    a => a.text,
+  );
   private readonly gameTypeRules = [required];
 
   private creating: boolean = false;

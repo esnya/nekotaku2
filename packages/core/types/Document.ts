@@ -1,6 +1,7 @@
-export default interface Document {
+export default interface Document<T> {
   id: string;
-  createdAt: string;
-  updatedAt: string;
-  deletedAt?: string;
+  createdAt: number;
+  updatedAt: number;
+  deletedAt?: number;
+  data: T;
 }

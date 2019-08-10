@@ -17,8 +17,7 @@
 import { Component, Vue, Prop } from 'vue-property-decorator';
 
 @Component({
-  components: {
-  },
+  components: {},
 })
 export default class WelcomeCard extends Vue {
   @Prop({ type: String, required: true }) createTarget!: string;

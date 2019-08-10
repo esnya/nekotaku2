@@ -9,6 +9,7 @@ Vue.use(Vuetify);
 
 function parseColor(color: string): string {
   if (color.match(/^#/)) return color;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const code = get(colors, color) as any;
   if (!code) throw new TypeError(`${color} is not valid theme color`);
   return code;
@@ -20,15 +21,18 @@ export default new Vuetify({
       customProperties: true,
     },
     themes: {
-      light: mapValues({
-        primary: 'blue.darken2',
-        secondary: 'grey.darken3',
-        accent: 'blue.accent1',
-        error: 'red.accent2',
-        info: 'blue.base',
-        success: 'green.base',
-        warning: 'amber.base',
-      }, parseColor),
+      light: mapValues(
+        {
+          primary: 'blue.darken2',
+          secondary: 'grey.darken3',
+          accent: 'blue.accent1',
+          error: 'red.accent2',
+          info: 'blue.base',
+          success: 'green.base',
+          warning: 'amber.base',
+        },
+        parseColor,
+      ),
     },
   },
   lang: {
