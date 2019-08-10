@@ -4,10 +4,18 @@ extends:
   - 'plugin:@typescript-eslint/recommended'
 parser: '@typescript-eslint/parser'
 rules:
+  '@typescript-eslint/explicit-function-return-type':
+    - error
+    - allowExpressions: true
   '@typescript-eslint/indent':
     - error
     - 2
   prettier/prettier:
     - error
-    - singleQuote: true
+    - endOfLine: lf
+      singleQuote: true
       trailingComma: all
+  require-jsdoc: 0
+
+  # ToDo
+  new-cap: 0
