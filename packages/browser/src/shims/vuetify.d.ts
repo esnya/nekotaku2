@@ -4,3 +4,12 @@ declare module 'vuetify/lib' {
     public constructor(options: {});
   }
 }
+
+declare module 'vuetify/es5/util/colors' {
+  const colors: {
+    [key: string]: {
+      [key: string]: string;
+    };
+  };
+  export default colors;
+}

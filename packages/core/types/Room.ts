@@ -3,6 +3,6 @@ import CharacterParameterDefinition from './CharacterParameterDefinition';
 
 export default interface Room {
   title: string;
-  game: Game;
+  gameType: string;
   characterParameterDefinitions: CharacterParameterDefinition[];
 }
