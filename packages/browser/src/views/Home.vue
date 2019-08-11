@@ -1,9 +1,8 @@
 <template lang="pug">
   #nekotaku-home
-    v-app-bar.pr-0(app dark color="primary")
-      img.mr-4(:src="logo" height=48)
-      v-toolbar-title.headline.text-uppercase
-        div ねこ卓
+    v-app-bar.pr-0(app dark collapse-on-scroll color="primary")
+      img.mr-4(:src="logo" height=42)
+      v-toolbar-title.headline ねこ卓
       v-spacer
     v-content
       v-container
