@@ -6,9 +6,8 @@
         v-text-field(
           required
           name="title"
-          type="text"
           label="タイトル"
-          :counter="20"
+          :counter="100"
           :rules="titleRules"
           v-model="title"
         )
@@ -18,6 +17,18 @@
           :items="gameTypeItems"
           :rules="gameTypeRules"
           v-model="gameType"
+        )
+        v-radio-group(row v-model="isLocked")
+          v-radio(label="誰でも参加可能" :value="false")
+          v-radio(label="パスワード入力で参加" :value="true")
+        v-text-field(
+          required
+          name="password"
+          label="パスワード"
+          :counter="100"
+          :rules="passwordRules"
+          v-model="password"
+          v-if="isLocked"
         )
     v-card-actions
       v-spacer
@@ -39,7 +50,7 @@ export default class RoomCreationCard extends Vue {
   private valid: boolean = false;
 
   private title: string | null = null;
-  private readonly titleRules = [required, maxLength(20)];
+  private readonly titleRules = [required, maxLength(100)];
 
   private gameType: string | null = null;
   private readonly gameTypeItems = sortBy(
@@ -50,6 +61,10 @@ export default class RoomCreationCard extends Vue {
     a => a.text,
   );
   private readonly gameTypeRules = [required];
+
+  private isLocked: boolean = false;
+  private password: string | null = null;
+  private readonly passwordRules = [required, maxLength(100)];
 
   private creating: boolean = false;
 
