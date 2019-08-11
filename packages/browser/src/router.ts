@@ -14,7 +14,9 @@ export default new Router({
       path: '/',
       name: 'home',
       component: () => ({
-        component: import(/* webpackChunkName: "Home" */ './views/Home.vue') as any,
+        component: import(
+          /* webpackChunkName: "Home" */ './views/Home.vue'
+        ) as any,
         loading: Loading,
       }),
     },
@@ -22,7 +24,9 @@ export default new Router({
       path: '/rooms/:roomId',
       name: 'room',
       component: () => ({
-        component: import(/* webpackChunkName: "Room" */ './views/Room.vue') as any,
+        component: import(
+          /* webpackChunkName: "Room" */ './views/Room.vue'
+        ) as any,
         loading: Loading,
       }),
     },
@@ -30,7 +34,9 @@ export default new Router({
       path: '*',
       name: 'not-found',
       component: () => ({
-        component: import(/* webpackChunkName: "NotFound" */ './views/NotFound.vue') as any,
+        component: import(
+          /* webpackChunkName: "NotFound" */ './views/NotFound.vue'
+        ) as any,
         loading: Loading,
       }),
     },

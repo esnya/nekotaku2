@@ -5,4 +5,5 @@ export default interface Room {
   title: string;
   gameType: string;
   characterParameterDefinitions: CharacterParameterDefinition[];
+  imageId?: string;
 }

@@ -9,9 +9,7 @@ rules:
     - allowExpressions: true
   '@typescript-eslint/no-object-literal-type-assertion': off
   '@typescript-eslint/no-unused-vars': error
-  '@typescript-eslint/indent':
-    - error
-    - 2
+  '@typescript-eslint/indent': off
   prettier/prettier:
     - error
     - endOfLine: lf

@@ -11,8 +11,7 @@
 import { Component, Vue } from 'vue-property-decorator';
 
 @Component({
-  components: {
-  },
+  components: {},
 })
 export default class Room extends Vue {
   private readonly room = {
