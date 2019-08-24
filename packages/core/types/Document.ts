@@ -3,5 +3,6 @@ export default interface Document<T> {
   createdAt: number;
   updatedAt: number;
   deletedAt?: number;
+  userId: string;
   data: T;
 }

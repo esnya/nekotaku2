@@ -12,7 +12,10 @@
     "test": "lerna run test"
   },
   "devDependencies": {
+    "@typescript-eslint/parser": "^2.0.0",
+    "eslint": "^6.1.0",
     "eslint-config-google": "^0.13.0",
-    "lerna": "^3.16.4"
+    "lerna": "^3.16.4",
+    "typescript": "^3.5.3"
   }
 }

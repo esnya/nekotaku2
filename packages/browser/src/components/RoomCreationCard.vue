@@ -1,6 +1,8 @@
 <template lang="pug">
   v-card
-    v-card-title.headline 卓を立てる
+    v-img(:src="imageUrl" v-if="imageUrl")
+      card-title-on-image 卓を立てる
+    v-card-title.headline(v-else) 卓を立てる
     v-card-text
       v-form(v-model="valid")#nekotaku-create-room-form
         v-text-field(
@@ -17,6 +19,17 @@
           :items="gameTypeItems"
           :rules="gameTypeRules"
           v-model="gameType"
+        )
+        v-textarea(
+          label="卓紹介（省略可）"
+          :rules="descriptionRules"
+          :counter="1000"
+          v-model="description"
+        )
+        v-file-input(
+          label="アイキャッチ画像（省略可）"
+          accept="image/*"
+          v-model="image"
         )
         v-radio-group(row v-model="isLocked")
           v-radio(label="誰でも参加可能" :value="false")
@@ -42,9 +55,12 @@ import { Component, Vue } from 'vue-property-decorator';
 import BCDice from 'bcdice';
 import sortBy from 'lodash-es/sortBy';
 import { required, maxLength } from '../validators';
+import CardTitleOnImage from './CardTitleOnImage.vue';
 
 @Component({
-  components: {},
+  components: {
+    CardTitleOnImage,
+  },
 })
 export default class RoomCreationCard extends Vue {
   private valid: boolean = false;
@@ -61,6 +77,14 @@ export default class RoomCreationCard extends Vue {
     a => a.text,
   );
   private readonly gameTypeRules = [required];
+
+  private description: string | null = null;
+  private readonly descriptionRules = [maxLength(1000)];
+
+  private image: File | null = null;
+  private get imageUrl(): string | null {
+    return this.image && URL.createObjectURL(this.image);
+  }
 
   private isLocked: boolean = false;
   private password: string | null = null;

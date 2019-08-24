@@ -1,6 +1,6 @@
 <template lang="pug">
   v-data-iterator(
-    :items="items"
+    :items="rooms"
     :search="search.search"
     :sort-by="search.sortBy"
     :sort-desc="search.sortDesc"
@@ -9,35 +9,15 @@
       v-container.grid-list-lg.pa-0
         v-layout(wrap)
           v-flex(v-for="item in props.items" :key="item.id" xs12 sm6 md4 lg3)
-            v-card
-              v-img(:src="`/img/resources/${item.imageId}`" v-if="item.imageId")
-                v-layout.nekotaku-title-on-image-container(align-end fill-height)
-                  v-card-title.nekotaku-title-on-image.white--text.headline {{item.title}}
-              v-card-title(v-else) {{item.title}}
-              v-list(dense)
-                v-list-item
-                  v-list-item-content ゲーム:
-                  v-list-item-content.align-end {{item.gameName}}
-                v-list-item
-                  v-list-item-content 作成者:
-                  v-list-item-content.align-end
-                    promise-value(:promise="item.userName")
-                v-list-item
-                  v-list-item-content 作成日時:
-                  v-list-item-content.align-end {{item.createdAtText}}
-              v-card-actions
-                v-spacer
-                v-btn(color="primary" :href="`/rooms/${item.id}`") 参加
+            room-card(collapse-description :room="item")
 </template>
 
 <script lang="ts">
-import moment from 'moment';
 import { Component, Vue, Prop } from 'vue-property-decorator';
 import Document from 'nekotaku-core/types/Document';
 import Room from 'nekotaku-core/types/Room';
-import BCDice from 'bcdice';
 import Search from '../types/Search';
-import PromiseValue from './PromiseValue.vue';
+import RoomCard from './RoomCard.vue';
 
 type DiffKey<
   T extends string | number | symbol,
@@ -54,7 +34,7 @@ type TableItem = Room &
 
 @Component({
   components: {
-    PromiseValue,
+    RoomCard,
   },
 })
 export default class RoomListCard extends Vue {
@@ -63,8 +43,9 @@ export default class RoomListCard extends Vue {
   private readonly rooms: Document<Room>[] = [
     {
       id: 'room01',
-      createdAt: Date.now() - 5000,
-      updatedAt: Date.now() - 5000,
+      userId: 'local',
+      createdAt: Date.now() - 3 * 60 * 1000,
+      updatedAt: Date.now() - 3 * 60 * 1000,
       data: {
         title: '卓01',
         gameType: 'SwordWorld',
@@ -73,8 +54,9 @@ export default class RoomListCard extends Vue {
     },
     {
       id: 'room02',
-      createdAt: Date.now() - 2500,
-      updatedAt: Date.now() - 2500,
+      userId: 'local',
+      createdAt: Date.now() - 1.5 * 60 * 1000,
+      updatedAt: Date.now() - 1.5 * 60 * 1000,
       data: {
         title: '卓02',
         gameType: 'SwordWorld2_0',
@@ -83,6 +65,7 @@ export default class RoomListCard extends Vue {
     },
     {
       id: 'room03',
+      userId: 'local',
       createdAt: Date.now(),
       updatedAt: Date.now(),
       data: {
@@ -93,33 +76,5 @@ export default class RoomListCard extends Vue {
       },
     },
   ];
-
-  private get items(): TableItem[] {
-    return this.rooms.map(room => {
-      const { data, ...others } = room;
-
-      const { gameType } = data;
-
-      const gameInfo = BCDice.infoList.find(game => game.gameType === gameType);
-      const gameName = gameInfo ? gameInfo.gameName : gameType;
-
-      return {
-        ...others,
-        ...data,
-        userName: new Promise<string>(resolve =>
-          setTimeout(() => resolve('ユーザー'), 1000),
-        ), // ToDo
-        createdAtText: moment(others.createdAt).format('lll'),
-        gameName,
-      };
-    });
-  }
 }
 </script>
-<style scoped lang="stylus">
-.nekotaku-title-on-image-container
-  margin-top: 0 !important
-.nekotaku-title-on-image
-  background-color: rgba(0, 0, 0, 0.5);
-  width: 100%;
-</style>
