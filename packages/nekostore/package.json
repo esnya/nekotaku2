@@ -1,0 +1,31 @@
+{
+  "name": "nekostore",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "esnya <esnya@nekometer.com>",
+  "homepage": "https://github.com/esnya/nekotaku2#readme",
+  "license": "MIT",
+  "main": "lib/store.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/esnya/nekotaku2.git"
+  },
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint src/**/*.ts",
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/esnya/nekotaku2/issues"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.0.0",
+    "@typescript-eslint/parser": "^2.0.0",
+    "eslint": "^6.2.2",
+    "eslint-config-prettier": "^6.1.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "prettier": "^1.18.2",
+    "typescript": "^3.5.3"
+  },
+  "dependencies": {}
+}
