@@ -9,6 +9,7 @@
   "scripts": {
     "build": "lerna run build",
     "lint": "eslint packages/**/*.ts",
+    "lint-fix": "npm run -s lint -- --fix",
     "test": "lerna run test"
   },
   "devDependencies": {
