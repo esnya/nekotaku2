@@ -55,7 +55,7 @@ export default class LocalForageDriver implements Driver {
       ...snapshot,
       change,
     };
-    this.eventBus.emit(getKey(ref.path), [changeSnapshot]);
+    this.eventBus.emit(getCollectionKey(ref.parent.path), [changeSnapshot]);
   }
 
   private addDocumentEventListener<T>(
@@ -83,9 +83,16 @@ export default class LocalForageDriver implements Driver {
   private async getItem<T>(
     ref: DocumentReference<T>,
   ): Promise<DriverDocumentSnapshot<T>> {
-    return await this.localForage.getItem<DriverDocumentChangeSnapshot<T>>(
-      getKey(ref.path),
-    );
+    const snapshot = await this.localForage.getItem<
+      DriverDocumentChangeSnapshot<T>
+    >(getKey(ref.path));
+    if (!snapshot) {
+      return {
+        id: ref.id,
+      };
+    }
+
+    return snapshot;
   }
 
   private async removeItem<T>(ref: DocumentReference<T>): Promise<void> {

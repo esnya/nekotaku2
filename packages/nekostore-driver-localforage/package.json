@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "@types/uuid": "^3.4.5",
+    "localforage-driver-memory": "^1.0.5",
     "typescript": "^3.5.3"
   }
 }
