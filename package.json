@@ -8,14 +8,20 @@
   "main": "index.js",
   "scripts": {
     "build": "lerna run build",
-    "lint": "lerna run lint",
+    "lint": "eslint packages/**/*.ts",
     "test": "lerna run test"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.0.0",
     "@typescript-eslint/parser": "^2.0.0",
     "eslint": "^6.2.2",
     "eslint-config-google": "^0.13.0",
+    "eslint-config-prettier": "^6.1.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-vue": "^5.2.3",
+    "eslint-plugin-vue-libs": "^4.0.0",
     "lerna": "^3.16.4",
+    "prettier": "^1.18.2",
     "typescript": "^3.5.3"
   },
   "dependencies": {}
