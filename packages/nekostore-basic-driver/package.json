@@ -1,0 +1,28 @@
+{
+  "name": "nekostore-basic-driver",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "esnya <dev.ukatama@gmail.com>",
+  "homepage": "https://github.com/esnya/nekotaku2#readme",
+  "license": "MIT",
+  "main": "lib/BasicDriver.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/esnya/nekotaku2.git"
+  },
+  "scripts": {
+    "build": "tsc --build src/tsconfig.json",
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/esnya/nekotaku2/issues"
+  },
+  "dependencies": {
+    "mingo": "^2.3.5",
+    "nekostore": "^0.0.0",
+    "uuid": "^3.3.3"
+  },
+  "devDependencies": {
+    "typescript": "^3.5.3"
+  }
+}
