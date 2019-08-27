@@ -1,12 +1,14 @@
 import firebase from 'firebase/app';
 import 'firebase/firestore';
-import Driver from 'nekostore/lib/driver/Driver';
-import Unsubscribe from 'nekostore/lib/store/Unsubscribe';
-import QueryDescriptor from 'nekostore/lib/store/QueryDescriptor';
-import CollectionReference from 'nekostore/lib/store/CollectionReference';
-import DocumentReference from 'nekostore/lib/store/DocumentReference';
-import DriverDocumentSnapshot from 'nekostore/lib/driver/DriverDocumentSnapshot';
-import DriverDocumentChangeSnapshot from 'nekostore/lib/driver/DriverDocumentChangeSnapshot';
+import {
+  Driver,
+  DriverDocumentChangeSnapshot,
+  DriverDocumentSnapshot,
+  DocumentReference,
+  CollectionReference,
+} from 'nekostore';
+import QueryDescriptor from 'nekostore/lib/types/QueryDescriptor';
+import Unsubscribe from 'nekostore/lib/types/Unsubscribe';
 
 function parseSnapshot<T>(
   snapshot: firebase.firestore.DocumentSnapshot,

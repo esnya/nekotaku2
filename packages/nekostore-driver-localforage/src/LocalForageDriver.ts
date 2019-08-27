@@ -1,18 +1,20 @@
-import Driver from 'nekostore/lib/driver/Driver';
 import LocalForage from 'localforage';
-import Query from 'nekostore/lib/store/Query';
-import QueryDescriptor from 'nekostore/lib/store/QueryDescriptor';
-import DriverDocumentSnapshot from 'nekostore/lib/driver/DriverDocumentSnapshot';
 import addFind from 'localforage-find';
-import CollectionPath from 'nekostore/lib/store/CollectionPath';
-import DocumentPath from 'nekostore/lib/store/DocumentPath';
 import { EventEmitter } from 'events';
-import DriverDocumentChangeSnapshot from 'nekostore/lib/driver/DriverDocumentChangeSnapshot';
-import Unsubscribe from 'nekostore/lib/store/Unsubscribe';
-import DocumentReference from 'nekostore/lib/store/DocumentReference';
-import CollectionReference from 'nekostore/lib/store/CollectionReference';
 import uuid from 'uuid';
-import DocumentChange from 'nekostore/lib/store/DocumentChange';
+import {
+  CollectionPath,
+  CollectionReference,
+  DocumentChange,
+  DocumentPath,
+  DocumentReference,
+  Driver,
+  DriverDocumentChangeSnapshot,
+  DriverDocumentSnapshot,
+  Query,
+  QueryDescriptor,
+  Unsubscribe,
+} from 'nekostore';
 
 interface LocalForageWithFind extends LocalForage {
   find<T>(

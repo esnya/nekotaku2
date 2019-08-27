@@ -1,6 +1,6 @@
 import DocumentReference from './DocumentReference';
 import Query from './Query';
-import Driver from '../driver/Driver';
+import Driver from '../drivers/Driver';
 
 export default class CollectionReference<T> extends Query<T> {
   public constructor(

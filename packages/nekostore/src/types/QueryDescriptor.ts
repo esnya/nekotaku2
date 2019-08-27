@@ -1,5 +1,5 @@
 import FieldPath from './FieldPath';
-import DocumentSnapshot from './DocumentSnapshot';
+import DocumentSnapshot from '../snapshots/DocumentSnapshot';
 
 export interface QueryDescriptorBase<T extends string> {
   type: T;

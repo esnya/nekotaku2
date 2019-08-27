@@ -1,4 +1,4 @@
-import DocumentMetadata from '../store/DocumentMetadata';
+import DocumentMetadata from '../types/DocumentMetadata';
 
 export default interface DriverDocumentSnapshot<T> {
   id: string;

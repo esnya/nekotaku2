@@ -1,8 +1,8 @@
 import CollectionReference from './CollectionReference';
-import Unsubscribe from './Unsubscribe';
-import DocumentSnapshot from './DocumentSnapshot';
-import DocumentPath from './DocumentPath';
-import Driver from '../driver/Driver';
+import Unsubscribe from '../types/Unsubscribe';
+import DocumentSnapshot from '../snapshots/DocumentSnapshot';
+import DocumentPath from '../types/DocumentPath';
+import Driver from '../drivers/Driver';
 
 export default class DocumentReference<T> {
   public constructor(parent: CollectionReference<T>, id: string) {

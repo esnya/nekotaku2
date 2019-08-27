@@ -1,7 +1,7 @@
 import DocumentSnapshot from './DocumentSnapshot';
-import DocumentChange, { ChangeType } from './DocumentChange';
-import DocumentReference from './DocumentReference';
-import DocumentMetadata from './DocumentMetadata';
+import DocumentChange, { ChangeType } from '../types/DocumentChange';
+import DocumentReference from '../references/DocumentReference';
+import DocumentMetadata from '../types/DocumentMetadata';
 
 export default class DocumentChangeSnapshot<T> extends DocumentSnapshot<T>
   implements DocumentChange {

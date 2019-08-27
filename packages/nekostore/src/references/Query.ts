@@ -1,17 +1,17 @@
-import DocumentSnapshot from './DocumentSnapshot';
-import Unsubscribe from './Unsubscribe';
-import FieldPath from './FieldPath';
-import Driver from '../driver/Driver';
+import DocumentSnapshot from '../snapshots/DocumentSnapshot';
+import Unsubscribe from '../types/Unsubscribe';
+import FieldPath from '../types/FieldPath';
+import Driver from '../drivers/Driver';
 import DocumentReference from './DocumentReference';
-import CollectionPath from './CollectionPath';
+import CollectionPath from '../types/CollectionPath';
 import QueryDescriptor, {
   OrderDirection,
   WhereOperator,
-} from './QueryDescriptor';
-import QuerySnapshot from './QuerySnapshot';
+} from '../types/QueryDescriptor';
+import QuerySnapshot from '../snapshots/QuerySnapshot';
 import CollectionReference from './CollectionReference';
-import QueryChangedSnapshot from './QueryChangedSnapshot';
-import DocumentChangeSnapshot from './DocumentChangeSnapshot';
+import QueryChangedSnapshot from '../snapshots/QueryChangeSnapshot';
+import DocumentChangeSnapshot from '../snapshots/DocumentChangeSnapshot';
 
 export default class Query<T> {
   public constructor(

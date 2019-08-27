@@ -1,4 +1,4 @@
-import Query from './Query';
+import Query from '../references/Query';
 import DocumentSnapshot from './DocumentSnapshot';
 
 export default class QuerySnapshot<T> extends Array<DocumentSnapshot<T>> {

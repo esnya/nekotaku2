@@ -7,6 +7,7 @@
   "author": "esnya",
   "main": "index.js",
   "scripts": {
+    "clean": "rimraf packages/*/lib packages/*/dist",
     "build": "lerna run build",
     "lint": "eslint packages/**/*.ts",
     "lint-fix": "npm run -s lint -- --fix",
@@ -23,6 +24,7 @@
     "eslint-plugin-vue-libs": "^4.0.0",
     "lerna": "^3.16.4",
     "prettier": "^1.18.2",
+    "rimraf": "^3.0.0",
     "typescript": "^3.5.3"
   },
   "dependencies": {}

@@ -1,13 +1,7 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "emitDecoratorMetadata": true,
-    "esModuleInterop": true,
-    "experimentalDecorators": true,
-    "moduleResolution": "node",
     "outDir": "lib",
-    "strict": true,
-    "declaration": true,
-    "sourceMap": true,
+    "rootDir": ".",
   },
+  "extends": "../../tsconfig.json"
 }

@@ -11,7 +11,7 @@
     "url": "git+https://github.com/esnya/nekotaku2.git"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "tsc -b src/tsconfig.json",
     "lint": "eslint src/**/*.ts",
     "test": "echo \"Error: run tests from root\" && exit 1"
   },

@@ -1,10 +1,10 @@
-import Unsubscribe from '../store/Unsubscribe';
-import QueryDescriptor from '../store/QueryDescriptor';
-import DocumentReference from '../store/DocumentReference';
-import Query from '../store/Query';
+import Unsubscribe from '../types/Unsubscribe';
+import QueryDescriptor from '../types/QueryDescriptor';
+import DocumentReference from '../references/DocumentReference';
+import Query from '../references/Query';
 import DriverDocumentSnapshot from './DriverDocumentSnapshot';
 import DriverDocumentChangeSnapshot from './DriverDocumentChangeSnapshot';
-import CollectionReference from '../store/CollectionReference';
+import CollectionReference from '../references/CollectionReference';
 
 export default interface Driver {
   getQuery<T>(
