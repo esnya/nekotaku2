@@ -19,8 +19,16 @@
     "url": "https://github.com/esnya/nekotaku2/issues"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.138",
+    "@types/mongodb": "^3.3.1",
+    "@types/uuid": "^3.4.5",
     "eslint": "^6.2.2",
+    "firebase": "^6.6.0",
     "typescript": "^3.5.3"
   },
-  "dependencies": {}
+  "dependencies": {
+    "lodash": "^4.17.15",
+    "mingo": "^2.3.5",
+    "uuid": "^3.3.3"
+  }
 }

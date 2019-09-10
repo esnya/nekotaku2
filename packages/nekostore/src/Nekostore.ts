@@ -1,5 +1,5 @@
-import CollectionReference from './references/CollectionReference';
-import Driver from './drivers/Driver';
+import CollectionReference from './core/CollectionReference';
+import Driver from './core/Driver';
 
 export default class Nekostore {
   public constructor(driver: Driver) {
