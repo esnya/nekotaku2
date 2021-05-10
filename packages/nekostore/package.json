@@ -27,7 +27,7 @@
     "typescript": "^3.5.3"
   },
   "dependencies": {
-    "lodash": "^4.17.19",
+    "lodash": "^4.17.21",
     "mingo": "^2.3.5",
     "uuid": "^3.3.3"
   }
